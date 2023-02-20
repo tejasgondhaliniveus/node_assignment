@@ -60,7 +60,7 @@ class UserAndTransactionsController {
                     "$gte": new Date(req.query.startDate)
                 }
                 key += `startdate${req.query.startDate}`
-            } else if (!req.query.startDate && req.query.endDate) {
+            } else if (req.query.endDate) {
                 findQuery.dateOfPurchased = {
                     "$lte": new Date(req.query.endDate)
                 }
@@ -78,7 +78,7 @@ class UserAndTransactionsController {
                     "$gte": parseInt(req.query.greaterThan)
                 }
                 key += `greaterthan${req.query.greaterThan}`
-            } else if (!req.query.greaterThan && req.query.lessThan) {
+            } else if (req.query.lessThan) {
                 findQuery.amount = {
                     "$lte": parseInt(req.query.lessThan)
                 }

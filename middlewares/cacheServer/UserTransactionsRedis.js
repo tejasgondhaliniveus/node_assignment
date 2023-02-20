@@ -8,7 +8,7 @@ class UserTransactionsRedis {
                 key += `startdate${req.query.startDate}enddate${req.query.endDate}`
             } else if (req.query.startDate && !req.query.endDate) {
                 key += `startdate${req.query.startDate}`
-            } else if (!req.query.startDate && req.query.endDate) {
+            } else if (req.query.endDate) {
                 key += `enddate${req.query.endDate}`
             }
             //amount range filter
@@ -16,7 +16,7 @@ class UserTransactionsRedis {
                 key += `greaterthan${req.query.greaterThan}lessthan${req.query.lessThan}`
             } else if (req.query.greaterThan && !req.query.lessThan) {
                 key += `greaterthan${req.query.greaterThan}`
-            } else if (!req.query.greaterThan && req.query.lessThan) {
+            } else if (req.query.lessThan) {
                 key += `lessthan${req.query.lessThan}`
             }
             const result = await get(key)
