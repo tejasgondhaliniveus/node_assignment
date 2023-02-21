@@ -40,12 +40,14 @@ class RedisClient {
         }
     }
     async set(key, value, ttl) {
-        ttl = ttl ? ttl : 10000 //in ms
+        ttl = ttl ? ttl : 300 //in sec
         try {
-            redisClient.set(key, JSON.stringify(value), ttl)
+            await redisClient.set(key, JSON.stringify(value), ttl)
+            redisClient.expire(key,ttl)
         } catch (error) {
             await redisClient.connect();
-            redisClient.set(key, JSON.stringify(value), ttl)
+            await redisClient.set(key, JSON.stringify(value), ttl)
+            redisClient.expire(key,ttl)
             console.log('Error in creating record in redis server', error)
         }
     }
