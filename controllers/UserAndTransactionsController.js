@@ -93,7 +93,7 @@ class UserAndTransactionsController {
                 responseResult.result = result
                 responseResult.page = page
                 responseResult.totalRecords = totalRecords
-                set(key,responseResult,15000)
+                set(key,responseResult,300)
                 return res.status(200).send(responseResult)
             } else {
                 responseResult.message = `Unable to fetch user's transaction`;
