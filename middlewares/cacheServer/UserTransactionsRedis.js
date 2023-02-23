@@ -1,4 +1,4 @@
-const { get } = require('../../utils/RedisClient')
+const { get } = require('../../utility/RedisClient')
 const redisKeysConstants = require('../../config/RedisKeyConstants')
 class UserTransactionsRedis {
     async listUserTransactions(req, res, next) {

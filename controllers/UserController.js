@@ -1,6 +1,7 @@
 
 const { check, validationResult } = require("express-validator");
 const UserService = require("../services/UserService");
+const Utils = require("../utility/Utils");
 
 class UserController {
     async createUser(req, res) {
@@ -35,6 +36,17 @@ class UserController {
             responseResult.message = `Error in creating user. Error message(${error})`;
             responseResult.success = false;
             return res.status(400).send(responseResult)
+        }
+    }
+    async uploadUserImages(req,res){
+        try{
+            // console.log('req',req)
+            const result = await Utils.uploadFileToCloudStorage(req.body,req.file)
+            console.log('result===>',result)
+            return result
+            
+        }catch(error){
+            console.log('error in UserController/uploadUserImages==>',error)
         }
     }
 }

@@ -1,8 +1,8 @@
 const { check, validationResult, param } = require("express-validator");
 const RedisKeyConstants = require("../config/RedisKeyConstants");
 const UserAndTransactionsService = require("../services/UserAndTransactionsService");
-const { set } = require("../utils/RedisClient");
-const redisPort = require('../utils/RedisClient')
+const { set } = require("../utility/RedisClient");
+const redisPort = require('../utility/RedisClient')
 
 class UserAndTransactionsController {
     async createUserTransactions(req, res) {
