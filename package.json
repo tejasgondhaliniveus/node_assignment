@@ -4,7 +4,7 @@
   "description": "node.js assignment for node lateral course",
   "main": "index.js",
   "scripts": {
-    "start":"PORT=3000 nodemon --inspect ./server/index.js --exec babel-node --presets es2015,stage-2",
+    "start": "PORT=3000 nodemon --inspect ./server/index.js --exec babel-node --presets es2015,stage-2",
     "test": "jest"
   },
   "repository": {
@@ -26,6 +26,7 @@
     "express": "^4.18.2",
     "express-validator": "^6.15.0",
     "i": "^0.3.7",
+    "jest-spy-object": "^1.4.0",
     "mongoose": "^6.9.2",
     "multer": "^1.4.5-lts.1",
     "npm": "^9.5.0",
@@ -37,6 +38,7 @@
     "babel-core": "^4.7.16",
     "babel-jest": "^29.4.3",
     "jest": "^29.4.3",
-    "regenerator-runtime": "^0.13.11"
+    "regenerator-runtime": "^0.13.11",
+    "supertest": "^6.3.3"
   }
 }

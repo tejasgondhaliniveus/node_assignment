@@ -25,7 +25,7 @@ class UserController {
                 responseResult.message = 'Successfully created new user';
                 responseResult.success = true;
                 responseResult.result = result
-                return res.status(200).send(responseResult)
+                return res.status(201).send(responseResult)
             } else {
                 responseResult.message = 'User not created';
                 responseResult.success = false;
