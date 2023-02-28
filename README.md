@@ -7,3 +7,10 @@ sudo docker build -t asia-south1-docker.pkg.dev/niveustraining/node-assignment/n
 
 # from local using gcloud
 sudo gcloud docker push gcr.io/niveustraining/node_assignment
+
+# test cases folder
+<rootDir>/models/tests
+
+# sonarQube report and Screenshot path
+
+<rootDir>/.scannerwork/
