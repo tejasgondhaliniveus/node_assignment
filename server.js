@@ -45,6 +45,6 @@ family:4
     console.log('Error while connecting to database. Exiting Now...',error)
 })
 
-app.listen(process.env.PORT|3000,()=>{
+module.exports = app.listen(process.env.PORT|3000,()=>{
     console.log("Server listening at port ",process.env.PORT)
 })

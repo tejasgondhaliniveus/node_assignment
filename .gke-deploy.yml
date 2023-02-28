@@ -1,0 +1,19 @@
+  spec:
+    container:
+    - name: 'node_assignment'
+      image: "gcr.io/niveustraining/node_assignment_latest"
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+      ports:
+        - containerPort: 9000
+
+  steps:
+- name: "gcr.io/niveustraining/node_assignment_latest"
+  args:
+  - run
+  - --filename="."   #dummy path  for kubernetes resourse file
+  - --image="gcr.io/niveustraining/node_assignment_latest"
+  - --location="asia-south1"
+  - --cluster=${_CLOUDSDK_CONTAINER_CLUSTER}

@@ -25,7 +25,7 @@ class UserAndTransactionsController {
                 responseResult.message = `Successfully created new user's transaction`;
                 responseResult.success = true;
                 responseResult.result = result
-                return res.status(200).send(responseResult)
+                return res.status(201).send(responseResult)
             } else {
                 responseResult.message = `User's transaction is not created`;
                 responseResult.success = false;
